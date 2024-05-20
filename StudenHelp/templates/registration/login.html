@@ -1,0 +1,71 @@
+{% load crispy_forms_tags %} {% block content %}
+<head>
+    <link
+    rel="stylesheet"
+    type="text/css"
+    href="https://bootswatch.com/5/litera/bootstrap.min.css"
+    />
+    <style>
+  
+  .container {
+    width: 550px;
+    height: auto;
+    margin-top: 100px;
+    padding: 25px;
+    border-radius: 5%;
+    color: white;
+    background: linear-gradient(135deg, rgba(110, 108, 108, 0.2), rgba(0, 0, 0, 0.8));
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); 
+    backdrop-filter: blur(5px); /* Applique le flou */
+    -webkit-backdrop-filter: blur(10px); /* Pour le support de Safari */
+}
+        /* body{
+                background-color: rgb(233, 231, 231);
+            } */
+            a{
+              text-decoration: none;
+              color: black;
+              font-weight: bold;
+            }
+            h2{
+              color: black;
+              text-align: center;
+              font-size: 39px;
+              margin-bottom: 30px;
+            }
+            input[type='submit']{
+              color: white;
+              background: black;
+              text-align: center;
+              margin-left: 35%;
+              margin-top: 20px;
+              border: none;
+              font-weight: bold;
+              width: 130px;
+              height: 40px;
+            }
+            input[type='submit']:hover{
+              color: black;
+              background: white;
+              text-align: center;
+              margin-left: 35%;
+              margin-top: 20px;
+            }
+    </style>
+</head>
+<div class="container">
+  <h2>Se connecter</h2>
+    {% csrf_token %} 
+    {% crispy form %}
+    <br />
+    <small>
+      Pas encore inscrit ?
+      <a href="{% url 'register' %}">S'inscrire</a>
+      <br />
+      Mot de passe oublié ?
+      <a href="{% url 'password_reset' %}">Renouveler mon mot de passe</a>
+    </small>
+  </form>
+</div>
+{% endblock %}
+

@@ -1,0 +1,28 @@
+{% block content %}
+<head>
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="https://bootswatch.com/5/litera/bootstrap.min.css"
+  />
+  <style>
+    .container {
+      /* margin-top: 40px; */
+      width: 450px;
+      margin: 0 auto;
+      margin-top: 60px;
+    }
+    
+  </style>
+</head>
+<div class="container">
+    <h3>Add Like</h3>
+    <form method="post">
+
+        {% csrf_token %} 
+        {{ form.as_p }}
+        <button>Ajouter un like</button>
+    </form>
+
+</div>
+{% endblock %}
